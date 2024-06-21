@@ -1,7 +1,7 @@
 import fs from "fs"
 import _ from "lodash"
 import cfg from "../../../lib/config/config.js"
-const Plugin_Path = `${process.cwd()}/plugins/yenai-plugin`
+const Plugin_Path = `${process.cwd()}/plugins/yenai-copy-plugin`
 const README_path = `${Plugin_Path}/README.md`
 const CHANGELOG_path = `${Plugin_Path}/CHANGELOG.md`
 const yunzai_ver = `v${cfg.package.version}`
@@ -91,8 +91,6 @@ if (yunzaiName == "miao-yunzai") {
   yunzaiName = "Miao-Yunzai"
 } else if (yunzaiName == "yunzai") {
   yunzaiName = "Yunzai-Bot"
-} else if (yunzaiName == "trss-yunzai") {
-  yunzaiName = "TRSS-Yunzai"
 } else {
   yunzaiName = _.capitalize(yunzaiName)
 }

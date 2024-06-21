@@ -14,20 +14,20 @@ global.ReplyError = class ReplyError extends Error {
   }
 }
 // 加载监听事件
-const eventsPath = "./plugins/yenai-plugin/apps/events"
+const eventsPath = "./plugins/yenai-copy-plugin/apps/events"
 const events = fs.readdirSync(eventsPath)
   .filter(file => file.endsWith(".js"))
 for (const File of events) {
   try {
-    logger.debug(`[Yenai-Plugin] 加载监听事件：${File}`)
+    logger.debug(`[yenai-copy-plugin] 加载监听事件：${File}`)
     await import(`./apps/events/${File}`)
   } catch (e) {
-    logger.error(`[Yenai-Plugin] 监听事件错误：${File}`)
+    logger.error(`[yenai-copy-plugin] 监听事件错误：${File}`)
     logger.error(e)
   }
 }
 
-const appsPath = "./plugins/yenai-plugin/apps"
+const appsPath = "./plugins/yenai-copy-plugin/apps"
 const jsFiles = Data.readDirRecursive(appsPath, "js", "events")
 
 let ret = jsFiles.map(file => {

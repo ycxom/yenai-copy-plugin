@@ -206,7 +206,7 @@ export class Admin extends plugin {
 
 // 随机底图
 const rodom = async function() {
-  let image = fs.readdirSync("./plugins/yenai-plugin/resources/admin/imgs/bg")
+  let image = fs.readdirSync("./plugins/yenai-copy-plugin/resources/admin/imgs/bg")
   let listImg = []
   for (let val of image) {
     listImg.push(val)

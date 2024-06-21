@@ -16,7 +16,7 @@ export async function initDependence() {
   } catch (error) {
     if (error.stack?.includes("Cannot find package")) {
       logger.warn("--------椰奶依赖缺失--------")
-      logger.warn(`yenai-plugin 缺少依赖将无法使用 ${logger.yellow("椰奶状态")}`)
+      logger.warn(`yenai-copy-plugin 缺少依赖将无法使用 ${logger.yellow("椰奶状态")}`)
       logger.warn(`如需使用请运行：${logger.red("pnpm add systeminformation -w")}`)
       logger.warn("---------------------------")
       logger.debug(decodeURI(error.stack))

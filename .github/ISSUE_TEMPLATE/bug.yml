@@ -13,7 +13,7 @@ body:
     attributes:
       label: 这个问题是否已经存在？
       options:
-        - label: 我已经搜索过[现有的问题](https://gitee.com/yeyang52/yenai-plugin/issues)并未发现相同问题
+        - label: 我已经搜索过[现有的问题](https://gitee.com/yeyang52/yenai-copy-plugin/issues)并未发现相同问题
           required: true
           
   - type: input

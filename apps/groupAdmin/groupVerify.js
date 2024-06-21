@@ -129,7 +129,7 @@ export class GroupVerify extends plugin {
 
 // 进群监听
 Bot.on?.("notice.group.increase", async(e) => {
-  logger.mark(`[Yenai-Plugin][进群验证]收到${e.user_id}的进群事件`)
+  logger.mark(`[yenai-copy-plugin][进群验证]收到${e.user_id}的进群事件`)
   let { openGroup, DelayTime } = Config.groupverify
 
   if (!openGroup.includes(e.group_id)) return
@@ -212,7 +212,7 @@ async function verify(userId, groupId, e) {
   if (!e.group.is_admin && !e.group.is_owner) return
   userId = Number(userId)
   groupId = Number(groupId)
-  logger.mark(`[Yenai-Plugin][进群验证]进行${userId}的验证`)
+  logger.mark(`[yenai-copy-plugin][进群验证]进行${userId}的验证`)
 
   const { times, range, time, remindAtLastMinute } = Config.groupverify
   const operator = ops[_.random(0, 1)]
@@ -225,7 +225,7 @@ async function verify(userId, groupId, e) {
   [ m, n ] = [ m >= n ? m : n, m >= n ? n : m ]
 
   const verifyCode = String(operator === "-" ? m - n : m + n)
-  logger.mark(`[Yenai-Plugin][进群验证]答案：${verifyCode}`)
+  logger.mark(`[yenai-copy-plugin][进群验证]答案：${verifyCode}`)
   const kickTimer = setTimeout(async() => {
     sendMsg(e, [ segment.at(userId), "\n验证超时，移出群聊，请重新申请" ])
 
@@ -280,10 +280,10 @@ async function sendMsg(e, msg) {
         let res = await sendFunction()
         return res
       } catch (error) {
-        logger.debug(`[Yenai-Plugin][进群验证]发送消息失败: ${error.message}`)
+        logger.debug(`[yenai-copy-plugin][进群验证]发送消息失败: ${error.message}`)
       }
     }
   }
 
-  throw Error("[Yenai-Plugin][进群验证]未获取到发送消息函数")
+  throw Error("[yenai-copy-plugin][进群验证]未获取到发送消息函数")
 }

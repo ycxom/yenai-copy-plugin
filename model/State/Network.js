@@ -7,8 +7,7 @@ const defList = [
   { name: "Baidu", url: "https://baidu.com" },
   { name: "Google", url: "https://google.com" },
   { name: "Github", url: "https://github.com" },
-  { name: "Gitee", url: "https://gitee.com" },
-  { name: "TRSS", url: "https://trss.me" }
+  { name: "Gitee", url: "https://gitee.com" }
 ]
 /**
  * 获取网络测试列表。
@@ -38,7 +37,7 @@ export function getNetworkTestList(e) {
     currentRequests++
     return handleSite(site).finally(() => {
       if (--currentRequests === 0) {
-        logger.debug("[Yenai-Plugin][状态]已完成所有网络测试")
+        logger.debug("[yenai-copy-plugin][状态]已完成所有网络测试")
       }
     })
   }))
@@ -56,7 +55,7 @@ const handleSite = (site) => {
 
 const handleError = (error, siteName) => {
   let errorMsg = "error"
-  const prefix = "[Yenai-Plugin][状态]"
+  const prefix = "[yenai-copy-plugin][状态]"
   if (error.name === "AbortError") {
     logger.warn(`${prefix}请求 ${siteName} 超时`)
     errorMsg = "timeout"

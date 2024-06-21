@@ -12,7 +12,7 @@ Bot.on?.("notice.group", async(e) => {
       if (e.user_id === bot.uin) {
         if (!Config.getGroup(e.group_id).groupNumberChange) return false
 
-        logger.info("[Yenai-Plugin]新增群聊")
+        logger.info("[yenai-copy-plugin]新增群聊")
 
         msg = [
           segment.image(`https://p.qlogo.cn/gh/${e.group_id}/${e.group_id}/100`),
@@ -22,7 +22,7 @@ Bot.on?.("notice.group", async(e) => {
       } else {
         if (!Config.getGroup(e.group_id).groupMemberNumberChange) return false
 
-        logger.info("[Yenai-Plugin]新增群员")
+        logger.info("[yenai-copy-plugin]新增群员")
 
         msg = [
           segment.image(`https://p.qlogo.cn/gh/${e.group_id}/${e.group_id}/100`),
@@ -38,7 +38,7 @@ Bot.on?.("notice.group", async(e) => {
       if (e.dismiss) {
         if (!Config.getGroup(e.group_id).groupNumberChange) return false
 
-        logger.info("[Yenai-Plugin]群聊被解散")
+        logger.info("[yenai-copy-plugin]群聊被解散")
 
         msg = [
           segment.image(
@@ -54,7 +54,7 @@ Bot.on?.("notice.group", async(e) => {
       ) {
         if (!Config.getGroup(e.group_id).groupNumberChange) return false
 
-        logger.info("[Yenai-Plugin]机器人被踢")
+        logger.info("[yenai-copy-plugin]机器人被踢")
 
         msg = [
           segment.image(
@@ -70,7 +70,7 @@ Bot.on?.("notice.group", async(e) => {
       ) {
         if (!Config.getGroup(e.group_id).groupNumberChange) return false
 
-        logger.info("[Yenai-Plugin]机器人退群")
+        logger.info("[yenai-copy-plugin]机器人退群")
 
         msg = [
           segment.image(
@@ -82,7 +82,7 @@ Bot.on?.("notice.group", async(e) => {
       } else if (e.operator_id === e.user_id) {
         if (!Config.getGroup(e.group_id).groupMemberNumberChange) return false
 
-        logger.info("[Yenai-Plugin]群员退群")
+        logger.info("[yenai-copy-plugin]群员退群")
 
         msg = [
           segment.image(
@@ -97,7 +97,7 @@ Bot.on?.("notice.group", async(e) => {
       } else if (e.operator_id !== e.user_id) {
         if (!Config.getGroup(e.group_id).groupMemberNumberChange) return false
 
-        logger.info("[Yenai-Plugin]群员被踢")
+        logger.info("[yenai-copy-plugin]群员被踢")
 
         msg = [
           segment.image(
@@ -117,7 +117,7 @@ Bot.on?.("notice.group", async(e) => {
     case "admin": {
       if (!Config.getGroup(e.group_id).groupAdminChange) return false
 
-      e.set ? logger.info("[Yenai-Plugin]机器人被设置管理") : logger.info("[Yenai-Plugin]机器人被取消管理")
+      e.set ? logger.info("[yenai-copy-plugin]机器人被设置管理") : logger.info("[yenai-copy-plugin]机器人被取消管理")
       if (e.user_id === bot.uin) {
         msg = [
           segment.image(
@@ -129,7 +129,7 @@ Bot.on?.("notice.group", async(e) => {
             `被操作群号：${e.group_id}`
         ]
       } else {
-        e.set ? logger.info("[Yenai-Plugin]新增群管理员") : logger.info("[Yenai-Plugin]取消群管理员")
+        e.set ? logger.info("[yenai-copy-plugin]新增群管理员") : logger.info("[yenai-copy-plugin]取消群管理员")
 
         msg = [
           segment.image(
@@ -166,7 +166,7 @@ Bot.on?.("notice.group", async(e) => {
       if (e.user_id != bot.uin) return false
 
       if (e.duration == 0) {
-        logger.info("[Yenai-Plugin]机器人被解除禁言")
+        logger.info("[yenai-copy-plugin]机器人被解除禁言")
         msg = [
           segment.image(
               `https://p.qlogo.cn/gh/${e.group_id}/${e.group_id}/100`
@@ -176,7 +176,7 @@ Bot.on?.("notice.group", async(e) => {
             `处理群号：${e.group_id}`
         ]
       } else if (e.user_id === bot.uin) {
-        logger.info("[Yenai-Plugin]机器人被禁言")
+        logger.info("[yenai-copy-plugin]机器人被禁言")
 
         msg = [
           segment.image(
@@ -194,7 +194,7 @@ Bot.on?.("notice.group", async(e) => {
     case "transfer": {
       if (!Config.getGroup(e.group_id).groupNumberChange) return false
 
-      logger.info("[Yenai-Plugin]群聊转让")
+      logger.info("[yenai-copy-plugin]群聊转让")
 
       msg = [
         segment.image(
@@ -264,7 +264,7 @@ Bot.on?.("notice.group", async(e) => {
       if (e.operator_id != e.user_id) {
         isManage = `撤回管理：${e.group.pickMember(e.operator_id).card}(${e.operator_id})\n`
       }
-      isManage ? logger.info("[Yenai-Plugin]群聊管理撤回") : logger.info("[Yenai-Plugin]群聊撤回")
+      isManage ? logger.info("[yenai-copy-plugin]群聊管理撤回") : logger.info("[yenai-copy-plugin]群聊撤回")
       // 发送的消息
       msg = [
         segment.image(`https://p.qlogo.cn/gh/${e.group_id}/${e.group_id}/100`),

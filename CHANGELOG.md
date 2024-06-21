@@ -171,7 +171,7 @@
 * 增加`#哔咔看[1~20]`搜索后快速查看指定作品ⁿᵉʷ
 * 分离哔咔id和作品信息方便复制id
 * 增加`pixiv``bika``搜图`更多配置项
-  * 请在**yenai-plugin/config/config/*.yaml**进行详情配置
+  * 请在**yenai-copy-plugin/config/config/*.yaml**进行详情配置
   * 如配置文件不是最新请复制**default_config**的文件到**config**进行配置
 * 优化目录结构
 * 新增`哔咔`相关功能ⁿᵉʷ
@@ -222,7 +222,7 @@
 * 增加`#翻译`**有道翻译**
 * 增加`#搜索菜单`**使用各大引擎搜索返回图片**
 * 支持群通知可单独设置
-  * 请在**yenai-plugin/config/config/group.yaml**进行配置
+  * 请在**yenai-copy-plugin/config/config/group.yaml**进行配置
 * 增加`#椰奶帮助`
 * 增加`#椰奶版本`
 * 增加`#椰奶更新日志`

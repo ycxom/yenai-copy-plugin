@@ -14,9 +14,9 @@
 使用 Git 克隆项目到本地开发环境：
 
 ```sh
-git clone https://gitee.com/yeyang52/yenai-plugin
+git clone https://gitee.com/yeyang52/yenai-copy-plugin
 或
-git clone https://github.com/yeyang52/yenai-plugin
+git clone https://github.com/yeyang52/yenai-copy-plugin
 ```
 
 ## 安装依赖
